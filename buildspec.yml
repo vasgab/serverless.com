@@ -4,6 +4,7 @@ phases:
   install:
     commands:
       - echo Installing Global Tools
+      - npm install time
       - npm run install-root
       - npm run install-services -- --service $SERVICE
   pre_build:
