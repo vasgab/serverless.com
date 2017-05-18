@@ -20,7 +20,9 @@
   },
   "homepage": "https://github.com/vasgab/serverless.com#readme",
   "devDependencies": {
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "gulp-run": "^1.7.1",
+    "yargs": "^8.0.1"
   },
   "dependencies": {
     "logger": "^0.0.1",
