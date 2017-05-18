@@ -1,0 +1,29 @@
+{
+  "name": "userservice",
+  "version": "1.0.0",
+  "description": "testing cicd",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install-root": "npm install",
+    "deploy": "gulp deploy",
+    "install-services": "gulp install-services"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vasgab/serverless.com.git"
+  },
+  "author": "gabriel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vasgab/serverless.com/issues"
+  },
+  "homepage": "https://github.com/vasgab/serverless.com#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  },
+  "dependencies": {
+    "logger": "^0.0.1",
+    "serverless": "^1.5.0"
+  }
+}
