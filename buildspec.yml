@@ -4,7 +4,6 @@ phases:
   install:
     commands:
       - echo Installing Global Tools
-      - npm install time
       - npm run install-root
       - npm run install-services -- --service $SERVICE
   pre_build:
@@ -15,10 +14,11 @@ phases:
   build:
     commands:
       - echo Build started on `date` for $STAGE
-      - BUILD_OUTPUT="$(npm run deploy -- --stage $STAGE --service $SERVICE)"
-      - echo "$BUILD_OUTPUT"
-      - if [ "`echo ${BUILD_OUTPUT} | grep ERROR `" != "" ]; then aws sns publish --topic-arn $TOPIC_ARN --message 'There was an error building the $SERVICE' --subject '$SERVICE build error on $STAGE'; else echo '$SERVICE deployed to $STAGE'; fi
-      - if [ "`echo ${BUILD_OUTPUT} | grep ERROR `" != "" ]; then exit 1; fi
+      - npm run deploy -- --stage $STAGE --service $SERVICE
+      #- BUILD_OUTPUT="$(npm run deploy -- --stage $STAGE --service $SERVICE)"
+      #- echo "$BUILD_OUTPUT"
+      #- if [ "`echo ${BUILD_OUTPUT} | grep ERROR `" != "" ]; then aws sns publish --topic-arn $TOPIC_ARN --message 'There was an error building the $SERVICE' --subject '$SERVICE build error on $STAGE'; else echo '$SERVICE deployed to $STAGE'; fi
+      #- if [ "`echo ${BUILD_OUTPUT} | grep ERROR `" != "" ]; then exit 1; fi
   post_build:
     commands:
       - echo Build completed on `date`
