@@ -20,6 +20,7 @@ service: userService
 provider:
   name: aws
   runtime: python3.6
+  profile: default
 
 # you can overwrite defaults here
 #  stage: dev
